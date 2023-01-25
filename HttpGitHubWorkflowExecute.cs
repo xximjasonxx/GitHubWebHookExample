@@ -47,7 +47,7 @@ namespace GithubHook
                 
                 dispatchEvent.Inputs.Add("app_roles", JsonConvert.SerializeObject(app_roles));
 
-                await client.Actions.Workflows.CreateDispatch("xximjasonxx", "ActionTestFlow", "blank.yml", dispatchEvent);
+                await client.Actions.Workflows.CreateDispatch("xximjasonxx", "GitHubWebHookExample", "blank.yml", dispatchEvent);
             }
             catch (Exception ex)
             {
