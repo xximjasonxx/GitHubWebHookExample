@@ -24,9 +24,9 @@ jobs:
       - name: Terraform Init
         id: init
         run: terraform init --backend-config="key=${{ github.event.inputs.app_name }}.tfstate" --backend-config="access_key=${{ secrets.SA_ACCESS_KEY }}"
-        working-directory: ./iac
+        working-directory: ./ActionTestFlow/iac
 
       - name: Terraform Apply
         id: apply
         run: terraform apply -auto-approve -var='application_name=${{ github.event.inputs.app_name }}' -var='application_roles=${{ fromJSON(toJSON(github.event.inputs.app_roles)) }}'
-        working-directory: ./iac
+        working-directory: ./ActionTestFlow/iac
